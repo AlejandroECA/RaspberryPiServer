@@ -13,8 +13,3 @@ jobs:
         commad: |
           # echo Hello, World!
           # echo HI
-
-workflows:
-  my-custom-workflow:
-    jobs:
-      - my-job-1
