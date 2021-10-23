@@ -5,7 +5,7 @@
     "client": "cd raspberrypiserver && yarn start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "test": "cd raspberrypiserver && yarn test"
+    "test": "cd raspberrypiserver && yarn tes"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
