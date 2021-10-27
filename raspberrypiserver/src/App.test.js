@@ -1,8 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import {shallow, mount, render} from 'enzyme';
+import ListTask from './components/ListTask'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+it('expect to render ListTask',()=>{
+expect(shallow(<ListTask a={'a'}/>).length).toEqual(1)
+})
