@@ -1,10 +1,8 @@
-import React, {useState, useEffect, useRef} from "react";
-import Rive,{ useRive,useStateMachineInput } from 'rive-react';
+import React  from "react";
+import { useRive,useStateMachineInput } from 'rive-react';
 import switche from './850-1653-smiley-switch.riv'
-import globe from './1242-2394-milkshake-bomb.riv'
-import monster from './623-1217-happy-monster.riv'
 import teddy from './828-1605-teddy-animation.riv'
-import useMouse from '@react-hook/mouse-position'
+import faro from './689-1342-lighthouse-switch.riv'
 
 
 
@@ -104,11 +102,34 @@ export function Teddy({valuex}) {
     );
 }
 
+
+
+
 export const BackgroundAnimated = () => { 
+
+    const { RiveComponent, rive } = useRive({
+      src: faro,
+      autoplay: false,
+    });
+    
+
+    const onButtonClick = () => {
+
+        rive.play()
+        setTimeout(()=>{rive.pause()},1500)
+    
+    }
+
     return (
-        <Rive 
-            src={globe}
-            cover={true}
-        />
+        <div
+            style={{
+                paddingLeft:'90%'
+            }}
+        >
+            <RiveComponent 
+                onClick={() => onButtonClick() }
+            /> 
+        </div>
+
     )
 }
